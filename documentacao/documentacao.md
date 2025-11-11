@@ -26,4 +26,29 @@ O sistema é destinado a jogadores casuais de jogos eletrônicos.
 Tabelas dos jogos
 ```sql
 
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(254) NOT NULL UNIQUE,
+    senha_hash VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE palavras (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    palavra VARCHAR(5) UNIQUE,
+    dificuldade ENUM('facil', 'medio', 'dificil')
+);
+
+CREATE TABLE jogos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT,
+    palavra_id INT,  -- referência à palavra secreta
+    tentativas INT DEFAULT 0,
+    max_tentativas INT DEFAULT 6,  -- limite de tentativa
+    venceu BOOLEAN DEFAULT FALSE,
+    data_inicio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    data_fim TIMESTAMP NULL,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE SET NULL, -- se usuário for deletado, permite manter o jogo
+    FOREIGN KEY (palavra_id) REFERENCES palavras(id)
+);
 ```
