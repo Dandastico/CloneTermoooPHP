@@ -1,0 +1,129 @@
+:root {
+    --color-correct: #6AAA64; /* Verde */
+    --color-present: #C9B458; /* Amarelo */
+    --color-absent: #787C7E; /* Cinza escuro */
+    --color-unknown: #D3D6DA; /* Cinza claro */
+    --color-keyboard-absent: #3A3A3C; /* Cinza do teclado */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F8F8F8;
+    margin: 0;
+    padding-top: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+#board {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    margin: 20px 0;
+}
+
+.word-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+.tile {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+    border: 2px solid var(--color-unknown);
+    text-transform: uppercase;
+    transition: background-color 0.5s ease-in-out, transform 0.1s;
+}
+
+/* Estilos de Feedback */
+.tile.correct {
+    background-color: var(--color-correct);
+    color: white;
+    border-color: var(--color-correct);
+}
+
+.tile.present {
+    background-color: var(--color-present);
+    color: white;
+    border-color: var(--color-present);
+}
+
+.tile.absent {
+    background-color: var(--color-absent);
+    color: white;
+    border-color: var(--color-absent);
+}
+
+/* Estilo do Teclado */
+#keyboard {
+    margin-top: 20px;
+    user-select: none;
+}
+
+.key-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.key {
+    background-color: var(--color-unknown);
+    color: black;
+    border-radius: 4px;
+    padding: 10px 8px;
+    margin: 0 3px;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 35px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.key.large {
+    min-width: 60px; /* Para ENTER e BACKSPACE */
+    font-size: 0.8em;
+}
+
+/* Estilos do Teclado após feedback */
+.key.correct {
+    background-color: var(--color-correct);
+    color: white;
+}
+
+.key.present {
+    background-color: var(--color-present);
+    color: white;
+}
+
+.key.absent {
+    background-color: var(--color-keyboard-absent);
+    color: white;
+}
+
+/* Estilo da mensagem */
+#message-container {
+    position: fixed;
+    top: 10%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.show-message {
+    opacity: 1 !important;
+}
