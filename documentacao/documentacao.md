@@ -25,18 +25,5 @@ O sistema é destinado a jogadores casuais de jogos eletrônicos.
 ## Arquitetura do Banco de Dados
 Tabelas dos jogos
 ```sql
-CREATE TABLE palavras (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    palavra VARCHAR(5) UNIQUE,
-    dificuldade ENUM('facil', 'medio', 'dificil')
-);
 
-CREATE TABLE jogos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    palavra_secreta VARCHAR(5),
-    usuario_id INT,
-    tentativas INT DEFAULT 0,
-    venceu BOOLEAN DEFAULT FALSE,
-    data_jogo TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
 ```
