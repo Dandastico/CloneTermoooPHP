@@ -135,3 +135,90 @@ h1 {
 .form-novo-jogo {
     margin-top: 20px;
 }
+
+/* ... Mantenha todo o CSS anterior ... */
+
+/* Estilos para o Menu e Formulários de Login */
+.menu-botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.btn-grande {
+    padding: 15px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #6aaa64;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+    text-decoration: none; /* Caso usemos tags <a> */
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.btn-grande:hover {
+    background-color: #5d9858;
+}
+
+.btn-secundario {
+    background-color: #787c7e;
+}
+
+.btn-secundario:hover {
+    background-color: #606365;
+}
+
+.form-auth {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.form-auth label {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.form-auth input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.link-voltar {
+    display: block;
+    margin-top: 15px;
+    color: #666;
+    text-decoration: underline;
+    font-size: 0.9em;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.header-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.logout-btn {
+    color: #d9534f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8em;
+}
