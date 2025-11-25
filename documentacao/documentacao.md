@@ -10,7 +10,7 @@ O sistema é uma cópia do jogo Termooo (versão mais famosa desse tipo de jogo 
 
 ### Requisitos do Sistema
 O jogo terá as mesmas regras de negócio do jogo Termooo:
-- O jogo irá escolher ser o "alvo"
+- O jogo irá escolher paralavra para ser o "alvo"
 - O jogador pode tentar acertar o "alvo" 6 vezes com palavras de 5 letras
 - O site mostrará o resultado da comparação do "chute" com o "alvo" utilizando cores:
   - Verde: letra certa na posição certa
