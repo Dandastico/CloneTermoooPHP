@@ -37,9 +37,4 @@ INSERT IGNORE INTO palavras (palavra) VALUES
 ('FEITO'), ('FELIZ'), ('FERRO'), ('FESTA'), ('FIBRA'), 
 ('FICHA'), ('FILME'), ('FINAL'), ('FIRMA'), ('FLORA');
 
--- Insere o usuário 'admin' com a senha 'admin' (já criptografada)
--- O hash abaixo é válido para a senha "admin"
-INSERT INTO usuarios (username, senha, sequencia_vitorias) 
-VALUES ('admin', '$2y$10$8sA.N.oX1.2.3.4.5.6.7.8.9.0.1.2.3.4.5.6.7.8.9.0.1.2.3', 0);
-
 SELECT * FROM palavras;

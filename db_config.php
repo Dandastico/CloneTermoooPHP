@@ -1,70 +1,104 @@
 <?php
 // Configurações do Banco de Dados
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root'); // Altere para seu usuário
-define('DB_PASSWORD', 'senac'); // Altere para sua senha
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', ''); 
 define('DB_NAME', 'termooo_db');
 
-// Conexão com o Banco de Dados
 $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
-// Checar conexão
 if ($conn->connect_error) {
-    die("Falha na conexão com o banco de dados: " . $conn->connect_error);
+    die("Falha na conexão: " . $conn->connect_error);
 }
 
-// Configurar charset para UTF-8
 mb_internal_encoding("UTF-8");
 $conn->set_charset("utf8mb4");
 
-// Iniciar sessão para armazenar o estado do jogo
 session_start();
 
-/**
- * Função para selecionar uma palavra aleatória do banco de dados.
- * @param mysqli $conn A conexão com o banco de dados.
- * @return string A palavra secreta em maiúsculas.
- */
+// --- FUNÇÕES DO JOGO ---
+
 function selecionarPalavraSecreta($conn) {
-    // Consulta para selecionar uma palavra aleatória
     $sql = "SELECT palavra FROM palavras ORDER BY RAND() LIMIT 1";
     $result = $conn->query($sql);
-
     if ($result && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
         return strtoupper($row['palavra']);
-    } else {
-        // Retorna uma palavra padrão em caso de falha
-        return 'MANUS'; 
     }
+    return 'FEIOS'; 
 }
 
-/**
- * Função para iniciar um novo jogo.
- * @param mysqli $conn A conexão com o banco de dados.
- */
 function iniciarNovoJogo($conn) {
-    // Seleciona a palavra secreta
-    $palavra_secreta = selecionarPalavraSecreta($conn);
-    
-    // Armazena o estado do jogo na sessão
-    $_SESSION['palavra_secreta'] = $palavra_secreta;
+    $_SESSION['palavra_secreta'] = selecionarPalavraSecreta($conn);
     $_SESSION['tentativas'] = [];
     $_SESSION['tentativas_restantes'] = 6;
     $_SESSION['jogo_terminado'] = false;
     $_SESSION['vitoria'] = false;
+    $_SESSION['tela_atual'] = 'jogo'; // Define que estamos na tela do jogo
 }
 
-// Inicia o jogo se a sessão não estiver configurada
-if (!isset($_SESSION['palavra_secreta'])) {
-    iniciarNovoJogo($conn);
+// --- FUNÇÕES DE USUÁRIO E AUTENTICAÇÃO ---
+
+function cadastrarUsuario($conn, $username, $senha) {
+    // Verifica se usuário já existe
+    $stmt = $conn->prepare("SELECT id FROM usuarios WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    if ($stmt->fetch()) {
+        return "Nome de usuário já existe.";
+    }
+    $stmt->close();
+
+    // Cria o hash da senha (segurança)
+    $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+
+    $stmt = $conn->prepare("INSERT INTO usuarios (username, senha) VALUES (?, ?)");
+    $stmt->bind_param("ss", $username, $senha_hash);
+    
+    if ($stmt->execute()) {
+        return true;
+    } else {
+        return "Erro ao cadastrar.";
+    }
 }
 
-// Se o usuário clicar em "Novo Jogo"
-if (isset($_POST['novo_jogo'])) {
-    iniciarNovoJogo($conn);
-    // Redireciona para evitar reenvio do formulário
-    header("Location: index.php");
-    exit();
+function logarUsuario($conn, $username, $senha) {
+    $stmt = $conn->prepare("SELECT id, username, senha, sequencia_vitorias FROM usuarios WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($row = $result->fetch_assoc()) {
+        if (password_verify($senha, $row['senha'])) {
+            // Login Sucesso
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['sequencia_vitorias'] = $row['sequencia_vitorias'];
+            return true;
+        }
+    }
+    return "Usuário ou senha incorretos.";
+}
+
+function atualizarSequencia($conn, $user_id, $ganhou) {
+    if ($ganhou) {
+        // Incrementa a sequência
+        $sql = "UPDATE usuarios SET sequencia_vitorias = sequencia_vitorias + 1 WHERE id = ?";
+        $_SESSION['sequencia_vitorias']++; // Atualiza na sessão também
+    } else {
+        // Zera a sequência
+        $sql = "UPDATE usuarios SET sequencia_vitorias = 0 WHERE id = ?";
+        $_SESSION['sequencia_vitorias'] = 0;
+    }
+    
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $stmt->close();
+}
+
+// Inicialização básica de navegação
+if (!isset($_SESSION['tela_atual'])) {
+    $_SESSION['tela_atual'] = 'menu';
 }
 ?>
