@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Clone do Jogo Termooo</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="clone-do-jogo-termooo">Clone do Jogo Termooo</h1>
+<ul>
+<li>Aluno: Daniel Ferreira Alves</li>
+<li>Curso: ADS B Noturno</li>
+<li>Matéria: Linguagem de Programação Web II</li>
+<li>Repositório do Projeto: <a href="https://github.com/Dandastico/CloneTermoooPHP">https://github.com/Dandastico/CloneTermoooPHP</a></li>
+</ul>
+<h1 id="semana-1">Semana 1</h1>
+<h2 id="11-objetivo-do-sistema">1.1 Objetivo do Sistema</h2>
+<p>O sistema é uma cópia do jogo Termooo (versão mais famosa desse tipo de jogo em português) ou Wordle (versão mais famosa em inglês, desenvolvido pelo NY Times). O site deve permitir a criação de novos usuários, log-in e gerenciamento do usuário (edição e deleção).</p>
+<h3 id="requisitos-do-sistema">Requisitos do Sistema</h3>
+<p>O jogo terá as mesmas regras de negócio do jogo Termooo:</p>
+<ul>
+<li>O jogo irá escolher ser o &quot;alvo&quot;</li>
+<li>O jogador pode tentar acertar o &quot;alvo&quot; 6 vezes com palavras de 5 letras</li>
+<li>O site mostrará o resultado da comparação do &quot;chute&quot; com o &quot;alvo&quot; utilizando cores:
+<ul>
+<li>Verde: letra certa na posição certa</li>
+<li>Amarela: letra certa na posição errada</li>
+</ul>
+</li>
+<li>O jogador pode criar uma conta</li>
+<li>O jogador pode efetuar log-in
+<ul>
+<li>Quando o jogador efetua o log-in, ele pode ter um histórico de seus jogos</li>
+</ul>
+</li>
+</ul>
+<h2 id="público-alvo">Público-alvo</h2>
+<p>O sistema é destinado a jogadores casuais de jogos eletrônicos.</p>
+<h2 id="wireframes">Wireframes</h2>
+<p><img src="file:///c:\xampp\htdocs\CloneTermoooPHP\documentacao\imagens\tela1.png" alt="tela1">
+<img src="file:///c:\xampp\htdocs\CloneTermoooPHP\documentacao\imagens\tela2.png" alt="tela2">
+<img src="file:///c:\xampp\htdocs\CloneTermoooPHP\documentacao\imagens\tela3.png" alt="tela3">
+<img src="file:///c:\xampp\htdocs\CloneTermoooPHP\documentacao\imagens\tela4.png" alt="tela4"></p>
+<h2 id="arquitetura-do-banco-de-dados">Arquitetura do Banco de Dados</h2>
+<p>Tabelas dos jogos</p>
+<pre><code class="language-sql">
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> usuarios (
+    id <span class="hljs-type">INT</span> AUTO_INCREMENT <span class="hljs-keyword">PRIMARY</span> KEY,
+    username <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,
+    email <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">254</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">UNIQUE</span>,
+    senha_hash <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> palavras (
+    id <span class="hljs-type">INT</span> AUTO_INCREMENT <span class="hljs-keyword">PRIMARY</span> KEY,
+    palavra <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">5</span>) <span class="hljs-keyword">UNIQUE</span>,
+    dificuldade ENUM(<span class="hljs-string">&#x27;facil&#x27;</span>, <span class="hljs-string">&#x27;medio&#x27;</span>, <span class="hljs-string">&#x27;dificil&#x27;</span>)
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> jogos (
+    id <span class="hljs-type">INT</span> AUTO_INCREMENT <span class="hljs-keyword">PRIMARY</span> KEY,
+    usuario_id <span class="hljs-type">INT</span>,
+    palavra_id <span class="hljs-type">INT</span>,  <span class="hljs-comment">-- referência à palavra secreta</span>
+    tentativas <span class="hljs-type">INT</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span>,
+    max_tentativas <span class="hljs-type">INT</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">6</span>,  <span class="hljs-comment">-- limite de tentativa</span>
+    venceu <span class="hljs-type">BOOLEAN</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-literal">FALSE</span>,
+    data_inicio <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span>,
+    data_fim <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">NULL</span>,
+    <span class="hljs-keyword">FOREIGN</span> KEY (usuario_id) <span class="hljs-keyword">REFERENCES</span> usuarios(id) <span class="hljs-keyword">ON</span> <span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">SET</span> <span class="hljs-keyword">NULL</span>, <span class="hljs-comment">-- se usuário for deletado, permite manter o jogo</span>
+    <span class="hljs-keyword">FOREIGN</span> KEY (palavra_id) <span class="hljs-keyword">REFERENCES</span> palavras(id)
+);
+</code></pre>
+<h1 id="semana-02----criação-da-página-log-in">Semana 02 -  Criação da Página Log-in</h1>
+<p>Nessa semana, criei o sistema de log-in para meu sistema:
+<img src="file:///c:\xampp\htdocs\CloneTermoooPHP\documentacao\imagens\screenshot_logIn.png" alt="telaLogIn"></p>
+<p>Ela é bem simples, exigindo apenas e-mail e senha, sem opção de log-in por SSO.</p>
+<p>O schema do banco de dados do CloneTermoo é:</p>
+<pre><code class="language-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> usuarios (
+    id <span class="hljs-type">INT</span> AUTO_INCREMENT <span class="hljs-keyword">PRIMARY</span> KEY,
+    username <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,
+    email <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">254</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">UNIQUE</span>,
+    senha_hash <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> palavras (
+    id <span class="hljs-type">INT</span> AUTO_INCREMENT <span class="hljs-keyword">PRIMARY</span> KEY,
+    palavra <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">5</span>) <span class="hljs-keyword">UNIQUE</span>,
+    dificuldade ENUM(<span class="hljs-string">&#x27;facil&#x27;</span>, <span class="hljs-string">&#x27;medio&#x27;</span>, <span class="hljs-string">&#x27;dificil&#x27;</span>)
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> jogos (
+    id <span class="hljs-type">INT</span> AUTO_INCREMENT <span class="hljs-keyword">PRIMARY</span> KEY,
+    usuario_id <span class="hljs-type">INT</span>,
+    palavra_id <span class="hljs-type">INT</span>,  <span class="hljs-comment">-- referência à palavra secreta</span>
+    tentativas <span class="hljs-type">INT</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span>,
+    max_tentativas <span class="hljs-type">INT</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">6</span>,  <span class="hljs-comment">-- limite de tentativa</span>
+    venceu <span class="hljs-type">BOOLEAN</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-literal">FALSE</span>,
+    data_inicio <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span>,
+    data_fim <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">NULL</span>,
+    <span class="hljs-keyword">FOREIGN</span> KEY (usuario_id) <span class="hljs-keyword">REFERENCES</span> usuarios(id) <span class="hljs-keyword">ON</span> <span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">SET</span> <span class="hljs-keyword">NULL</span>, <span class="hljs-comment">-- se usuário for deletado, permite manter o jogo</span>
+    <span class="hljs-keyword">FOREIGN</span> KEY (palavra_id) <span class="hljs-keyword">REFERENCES</span> palavras(id)
+</code></pre>
+<p>Os arquivos desse sistema são organizados da seguinte forma:</p>
+<pre><code>📁 CloneTermoooPHP/ (Pasta raiz do projeto)
+│
+├── 📁 public/ (Esta é a pasta raiz do servidor web - &quot;DocumentRoot&quot;)
+│   │
+│   ├── 📄 index.php          (Página principal do jogo)
+│   ├── 📄 login.html          (O formulário de login)
+│   ├── 📄 registrar.html      (O formulário de registro)
+│   │
+│   ├── 📄 processa_login.php    (Endpoint do AJAX)
+│   ├── 📄 processa_registro.php (Endpoint do AJAX de registro)
+│   ├── 📄 logout.php          (Script para destruir a sessão)
+│   │
+│   └── 📁 assets/ (Todos os arquivos CSS, JS e imagens)
+│       ├── 📁 css/
+│       │   ├── 📄 style_login.css
+│       │   └── 📄 style_game.css
+│       └── 📁 js/
+│           ├── 📄 login.js
+│           └── 📄 registrar.js
+│
+└── 📁 src/ (Código &quot;privado&quot; do backend e lógica de negócios)
+    │
+    ├── 📄 db_config.php       (A conexão com o BD)
+    └── 📄 auth_check.php      (Um script para verificar se o usuário está logado)
+</code></pre>
+<h2 id="códigos-do-projeto">Códigos do projeto</h2>
+<p>A seguir, são apresentados os códigos que geram o sistema.</p>
+<h3 id="front-end">Front-end</h3>
+<p>No front-end, as tecnologias utilizadas forma HTML, CSS e JS</p>
+<p><strong>HTML da tela de login</strong></p>
+<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;pt-BR&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Login - Clone Termooo<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;assets/css/style_login.css&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;login-container&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;loginForm&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Login<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+            
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;message&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;message&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-group&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;loginUser&quot;</span>&gt;</span>Usuário ou Email<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;loginUser&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;loginUser&quot;</span> <span class="hljs-attr">required</span> <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input-group&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;loginPass&quot;</span>&gt;</span>Senha<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;loginPass&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;loginPass&quot;</span> <span class="hljs-attr">required</span> <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">&quot;current-password&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;loginButton&quot;</span>&gt;</span>Entrar<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;link-registro&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Não tem uma conta? <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;registrar.html&quot;</span>&gt;</span>Registre-se<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;assets/js/login.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p><strong>JS da tela de login</strong></p>
+<pre><code class="language-js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;DOMContentLoaded&#x27;</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">const</span> loginForm = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;loginForm&#x27;</span>);
+    <span class="hljs-keyword">const</span> messageDiv = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;message&#x27;</span>);
+    <span class="hljs-keyword">const</span> loginButton = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;loginButton&#x27;</span>);
+
+    loginForm.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;submit&#x27;</span>, <span class="hljs-keyword">async</span> (e) =&gt; {
+        e.<span class="hljs-title function_">preventDefault</span>(); <span class="hljs-comment">// Impede o recarregamento da página</span>
+
+        <span class="hljs-comment">// Desabilita o botão e mostra &quot;Carregando...&quot;</span>
+        loginButton.<span class="hljs-property">disabled</span> = <span class="hljs-literal">true</span>;
+        loginButton.<span class="hljs-property">textContent</span> = <span class="hljs-string">&#x27;Carregando...&#x27;</span>;
+        messageDiv.<span class="hljs-property">className</span> = <span class="hljs-string">&#x27;message&#x27;</span>;
+        messageDiv.<span class="hljs-property">textContent</span> = <span class="hljs-string">&#x27;&#x27;</span>;
+
+        <span class="hljs-comment">// Coleta os dados do formulário</span>
+        <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FormData</span>(loginForm);
+        <span class="hljs-keyword">const</span> data = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">fromEntries</span>(formData.<span class="hljs-title function_">entries</span>());
+
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&#x27;processa_login.php&#x27;</span>, {
+                <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;POST&#x27;</span>,
+                <span class="hljs-attr">headers</span>: {
+                    <span class="hljs-string">&#x27;Content-Type&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>
+                },
+                <span class="hljs-attr">body</span>: <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(data)
+            });
+
+            <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">json</span>();
+
+            <span class="hljs-keyword">if</span> (result.<span class="hljs-property">success</span>) {
+                <span class="hljs-comment">// Sucesso</span>
+                messageDiv.<span class="hljs-property">textContent</span> = <span class="hljs-string">&#x27;Login bem-sucedido! Redirecionando...&#x27;</span>;
+                messageDiv.<span class="hljs-property">className</span> = <span class="hljs-string">&#x27;message success&#x27;</span>;
+                
+                <span class="hljs-comment">// Redireciona para a página principal do jogo (ex: index.php)</span>
+                <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
+                    <span class="hljs-comment">// O destino deve ser a página principal do jogo</span>
+                    <span class="hljs-variable language_">window</span>.<span class="hljs-property">location</span>.<span class="hljs-property">href</span> = <span class="hljs-string">&#x27;index.php&#x27;</span>; 
+                }, <span class="hljs-number">2000</span>);
+
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-comment">// Erro</span>
+                messageDiv.<span class="hljs-property">textContent</span> = result.<span class="hljs-property">message</span> || <span class="hljs-string">&#x27;Erro desconhecido.&#x27;</span>;
+                messageDiv.<span class="hljs-property">className</span> = <span class="hljs-string">&#x27;message error&#x27;</span>;
+                loginButton.<span class="hljs-property">disabled</span> = <span class="hljs-literal">false</span>;
+                loginButton.<span class="hljs-property">textContent</span> = <span class="hljs-string">&#x27;Entrar&#x27;</span>;
+            }
+        } <span class="hljs-keyword">catch</span> (error) {
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&#x27;Erro na requisição:&#x27;</span>, error);
+            messageDiv.<span class="hljs-property">textContent</span> = <span class="hljs-string">&#x27;Erro de conexão com o servidor.&#x27;</span>;
+            messageDiv.<span class="hljs-property">className</span> = <span class="hljs-string">&#x27;message error&#x27;</span>;
+            loginButton.<span class="hljs-property">disabled</span> = <span class="hljs-literal">false</span>;
+            loginButton.<span class="hljs-property">textContent</span> = <span class="hljs-string">&#x27;Entrar&#x27;</span>;
+        }
+    });
+});
+</code></pre>
+<h3 id="back-end">Back-End</h3>
+<p>O back-end desse projeto será todo desenvolvido por PHP</p>
+<p><strong>db_config.php</strong></p>
+<p>Responsável pela conexão do sistema com o banco de dados.</p>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">// db_config.php</span>
+<span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">&#x27;DB_HOST&#x27;</span>, <span class="hljs-string">&#x27;localhost&#x27;</span>);
+<span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">&#x27;DB_USER&#x27;</span>, <span class="hljs-string">&#x27;root&#x27;</span>);       <span class="hljs-comment">// &lt;-- Seu usuário do MySQL</span>
+<span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">&#x27;DB_PASS&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);           <span class="hljs-comment">// &lt;-- Sua senha do MySQL</span>
+<span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">&#x27;DB_NAME&#x27;</span>, <span class="hljs-string">&#x27;termooo_db&#x27;</span>); <span class="hljs-comment">// O banco de dados da sua documentação</span>
+<span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">&#x27;DB_CHARSET&#x27;</span>, <span class="hljs-string">&#x27;utf8mb4&#x27;</span>);
+
+<span class="hljs-variable">$options</span> = [
+    PDO::<span class="hljs-variable constant_">ATTR_ERRMODE</span>            =&gt; PDO::<span class="hljs-variable constant_">ERRMODE_EXCEPTION</span>,
+    PDO::<span class="hljs-variable constant_">ATTR_DEFAULT_FETCH_MODE</span> =&gt; PDO::<span class="hljs-variable constant_">FETCH_ASSOC</span>,
+    PDO::<span class="hljs-variable constant_">ATTR_EMULATE_PREPARES</span>   =&gt; <span class="hljs-literal">false</span>,
+];
+
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-variable">$dsn</span> = <span class="hljs-string">&quot;mysql:host=&quot;</span> . DB_HOST . <span class="hljs-string">&quot;;dbname=&quot;</span> . DB_NAME . <span class="hljs-string">&quot;;charset=&quot;</span> . DB_CHARSET;
+    <span class="hljs-variable">$pdo</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">PDO</span>(<span class="hljs-variable">$dsn</span>, DB_USER, DB_PASS, <span class="hljs-variable">$options</span>);
+} <span class="hljs-keyword">catch</span> (PDOException <span class="hljs-variable">$e</span>) {
+    <span class="hljs-comment">// Em um ambiente de produção, você não deve exibir erros detalhados.</span>
+    <span class="hljs-comment">// Você deve logar o erro e mostrar uma mensagem genérica.</span>
+    <span class="hljs-title function_ invoke__">error_log</span>(<span class="hljs-variable">$e</span>-&gt;<span class="hljs-title function_ invoke__">getMessage</span>()); <span class="hljs-comment">// Loga o erro no servidor</span>
+    
+    <span class="hljs-comment">// Resposta de erro genérica para o frontend (caso seja uma API)</span>
+    <span class="hljs-comment">// header(&#x27;Content-Type: application/json&#x27;);</span>
+    <span class="hljs-comment">// echo json_encode([&#x27;success&#x27; =&gt; false, &#x27;message&#x27; =&gt; &#x27;Erro de conexão com o banco de dados.&#x27;]);</span>
+    
+    <span class="hljs-comment">// Ou uma página de erro</span>
+    <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;Erro crítico de conexão com o banco de dados. Por favor, tente mais tarde.&quot;</span>);
+}
+<span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p><strong>processa_login.php</strong></p>
+<p>Segmenta as informações recebidas como arquivo JSON do documento login.js e verifica se o e-mail digitado pelo usuário e a senha correspondem com algum usuário já cadastrado no banco de dados, na tabela &quot;usuarios&quot;.</p>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">// processa_login.php</span>
+
+<span class="hljs-comment">// 1. Inicia a sessão (ESSENCIAL para manter o usuário logado)</span>
+<span class="hljs-comment">// Deve ser a primeira coisa no script</span>
+<span class="hljs-title function_ invoke__">session_start</span>();
+
+<span class="hljs-comment">// 2. Inclui a conexão com o banco</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;/../src/db_config.php&#x27;</span>;
+
+<span class="hljs-comment">// 3. Define o tipo de resposta como JSON</span>
+<span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&#x27;Content-Type: application/json&#x27;</span>);
+
+<span class="hljs-comment">// 4. Prepara a resposta padrão</span>
+<span class="hljs-variable">$response</span> = [<span class="hljs-string">&#x27;success&#x27;</span> =&gt; <span class="hljs-literal">false</span>, <span class="hljs-string">&#x27;message&#x27;</span> =&gt; <span class="hljs-string">&#x27;Requisição inválida.&#x27;</span>];
+
+<span class="hljs-comment">// 5. Verifica se o método é POST</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$_SERVER</span>[<span class="hljs-string">&#x27;REQUEST_METHOD&#x27;</span>] === <span class="hljs-string">&#x27;POST&#x27;</span>) {
+    
+    <span class="hljs-comment">// Pega os dados JSON enviados pelo JavaScript</span>
+    <span class="hljs-variable">$data</span> = <span class="hljs-title function_ invoke__">json_decode</span>(<span class="hljs-title function_ invoke__">file_get_contents</span>(<span class="hljs-string">&#x27;php://input&#x27;</span>), <span class="hljs-literal">true</span>);
+
+    <span class="hljs-comment">// Validação básica</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$data</span>[<span class="hljs-string">&#x27;loginUser&#x27;</span>]) || <span class="hljs-keyword">empty</span>(<span class="hljs-variable">$data</span>[<span class="hljs-string">&#x27;loginPass&#x27;</span>])) {
+        <span class="hljs-variable">$response</span>[<span class="hljs-string">&#x27;message&#x27;</span>] = <span class="hljs-string">&#x27;Usuário/Email e senha são obrigatórios.&#x27;</span>;
+        <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">json_encode</span>(<span class="hljs-variable">$response</span>);
+        <span class="hljs-keyword">exit</span>;
+    }
+
+    <span class="hljs-variable">$loginUser</span> = <span class="hljs-title function_ invoke__">trim</span>(<span class="hljs-variable">$data</span>[<span class="hljs-string">&#x27;loginUser&#x27;</span>]); <span class="hljs-comment">// Pode ser username ou email</span>
+    <span class="hljs-variable">$password</span> = <span class="hljs-variable">$data</span>[<span class="hljs-string">&#x27;loginPass&#x27;</span>];
+
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-comment">// 6. Prepara a query (Seguro contra SQL Injection)</span>
+        <span class="hljs-comment">// O login funciona tanto com &#x27;username&#x27; quanto com &#x27;email&#x27;</span>
+        <span class="hljs-variable">$sql</span> = <span class="hljs-string">&quot;SELECT id, username, senha_hash FROM usuarios WHERE username = :login OR email = :login LIMIT 1&quot;</span>;
+        
+        <span class="hljs-variable">$stmt</span> = <span class="hljs-variable">$pdo</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>(<span class="hljs-variable">$sql</span>);
+        <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>([<span class="hljs-string">&#x27;login&#x27;</span> =&gt; <span class="hljs-variable">$loginUser</span>]);
+        
+        <span class="hljs-variable">$user</span> = <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">fetch</span>();
+
+        <span class="hljs-comment">// 7. Verifica se o usuário existe E se a senha está correta</span>
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$user</span> &amp;&amp; <span class="hljs-title function_ invoke__">password_verify</span>(<span class="hljs-variable">$password</span>, <span class="hljs-variable">$user</span>[<span class="hljs-string">&#x27;senha_hash&#x27;</span>])) {
+            
+            <span class="hljs-comment">// SUCESSO!</span>
+            
+            <span class="hljs-comment">// 8. Regenera o ID da sessão para evitar &quot;Session Fixation&quot;</span>
+            <span class="hljs-title function_ invoke__">session_regenerate_id</span>(<span class="hljs-literal">true</span>);
+            
+            <span class="hljs-comment">// 9. Armazena os dados do usuário na sessão</span>
+            <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user_id&#x27;</span>] = <span class="hljs-variable">$user</span>[<span class="hljs-string">&#x27;id&#x27;</span>];
+            <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;username&#x27;</span>] = <span class="hljs-variable">$user</span>[<span class="hljs-string">&#x27;username&#x27;</span>];
+            <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;logged_in&#x27;</span>] = <span class="hljs-literal">true</span>;
+
+            <span class="hljs-variable">$response</span>[<span class="hljs-string">&#x27;success&#x27;</span>] = <span class="hljs-literal">true</span>;
+            <span class="hljs-variable">$response</span>[<span class="hljs-string">&#x27;message&#x27;</span>] = <span class="hljs-string">&#x27;Login bem-sucedido!&#x27;</span>;
+
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">// Falha (usuário não encontrado ou senha errada)</span>
+            <span class="hljs-comment">// Usamos uma mensagem genérica por segurança</span>
+            <span class="hljs-variable">$response</span>[<span class="hljs-string">&#x27;message&#x27;</span>] = <span class="hljs-string">&#x27;Usuário ou senha inválidos.&#x27;</span>;
+        }
+
+    } <span class="hljs-keyword">catch</span> (PDOException <span class="hljs-variable">$e</span>) {
+        <span class="hljs-comment">// Loga o erro e envia uma resposta genérica</span>
+        <span class="hljs-title function_ invoke__">error_log</span>(<span class="hljs-variable">$e</span>-&gt;<span class="hljs-title function_ invoke__">getMessage</span>());
+        <span class="hljs-variable">$response</span>[<span class="hljs-string">&#x27;message&#x27;</span>] = <span class="hljs-string">&#x27;Erro no servidor. Tente novamente mais tarde.&#x27;</span>;
+    }
+}
+
+<span class="hljs-comment">// 10. Retorna a resposta (seja sucesso ou falha) como JSON</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">json_encode</span>(<span class="hljs-variable">$response</span>);
+<span class="hljs-meta">?&gt;</span>
+</code></pre>
+<h2 id="maiores-dificuldades-do-projeto">Maiores dificuldades do projeto</h2>
+<p>Minha maior dificuldade foi descobrir como trabalhar com o JSON que é enviado de &quot;login.js&quot; para &quot;processa_login.php&quot;.</p>
+<p>Sei que JSON é uma prática comum no mercado, já se tornou uma obrigação saber trabalhar com essa nomenclatura, mas foi a primeira vez que tive fazer algo mais &quot;complexo&quot; com essa estrutura de arquivo</p>
+<h1 id="semana-3---introdução-à-_session">Semana 3 - Introdução à $_SESSION</h1>
+<h2 id="alterações-do-projeto">Alterações do projeto</h2>
+<p>Na semana passada, havia criado a tela de log-in utilizando JS. Agora, todo o processo funciona apenas com PHP e MySQL.</p>
+<p>Também alterei a aparência das interfaces.</p>
+<h2 id="o-poder-da-_session">O poder da $_SESSION</h2>
+<p>Sem as sessões, o protocolo HTTP não teria memória, ou seja, o servidor esqueceria quem é o usuário ou o que ele estava fazendo assim que a página terminasse de carregar.</p>
+<p>Utilizar sessões permitiu:</p>
+<ol>
+<li>Persistência do Jogo: sem as sessões, o script rodaria do zero depois de cada palpite do usuário, sempre selecionando uma nova palavra secreta.
+<ul>
+<li>o código armazena a palavra secreta em $_SESSION['palavra_secreta'] e o array $_SESSION['tentativas'] armazene o histórico de tentativas do usuário</li>
+</ul>
+</li>
+<li>Segurança Anti-Trapaça: o usuário não tem acesso à variável que contém a resposta, garantindo a integridade do desafio, a palavra-secreta fica armazenada na memória do servidor.</li>
+<li>Login e Identidade: o uso de $_SESSION['user_id'] e $_SESSION['username'] permite que o sistema &quot;lembre&quot; que o usuário já digitou a senha correta.</li>
+<li>Navegação em uma Página Única: isso permite que o usuário navegue por diferentes &quot;telas&quot; sem que a URL mude ou sem precisar de vários arquivos (login.php, game.php, menu.php).</li>
+</ol>
+<h2 id="nova-organização-de-arquivos-e-pastas">Nova Organização de Arquivos e Pastas</h2>
+<p>Antes, eu iria depender mais de JS para criar o CloneTermooo. Isso expandia drasticamente a estrutura das pastas.</p>
+<p>Agora, o código ficou com uma estrutura tecnológica muito mais simplificada, o que diminiu a complexidade da estrutura das pastas</p>
+<pre><code>📁 CloneTermoooPHP/ (Pasta raiz do projeto em htdocs)
+│
+├── 📄 index.php         (Arquivo principal: Controla o fluxo, jogo, login e rotas)
+├── 📄 db_config.php     (Configuração do banco de dados, sessão e funções globais)
+├── 📄 style.css         (Folha de estilos para o jogo e formulários)
+│
+└── 📄 termooo_db.sql    (Script SQL para criar o banco, tabelas e dados iniciais)
+</code></pre>
+<h2 id="códigos">Códigos</h2>
+<h3 id="termooo_dbsql">termooo_db.sql</h3>
+<pre><code class="language-mysql">-- Criação do banco de dados
+CREATE DATABASE IF NOT EXISTS termooo_db;
+USE termooo_db;
+-- Criação da tabela de palavras
+CREATE TABLE IF NOT EXISTS palavras (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    palavra VARCHAR(5) NOT NULL UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL, -- Armazena Hash da senha, não o texto puro
+    sequencia_vitorias INT DEFAULT 0
+);
+
+-- Inserção de palavras de 5 letras (exemplo)
+INSERT IGNORE INTO palavras (palavra) VALUES
+('ACASO'), ('ACAO'), ('ADAGA'), ('AGORA'), ('AINDA'), 
+('ALIAS'), ('ALUNO'), ('AMIGO'), ('ANEXO'), ('ANIMO'), 
+('ANTES'), ('APOIO'), ('ARROZ'), ('ATRIZ'), ('ATUAL'), 
+('AUREA'), ('AVIAO'), ('BAIXO'), ('BANHO'), ('BARCO'), 
+('BEIJO'), ('BICHO'), ('BLOCO'), ('BLUSA'), ('BOTAO'), 
+('BRACO'), ('BRAVO'), ('BREVE'), ('BRISA'), ('BURRO'), 
+('CAIXA'), ('CALMA'), ('CAMPO'), ('CANAL'), ('CANTO'), 
+('CARGA'), ('CARNE'), ('CARRO'), ('CARTA'), ('CASAL'), 
+('CAUSA'), ('CENAS'), ('CESTA'), ('CHAVE'), ('CHEFE'), 
+('CHEIO'), ('CHINA'), ('CHUVA'), ('CINCO'), ('CINTO'), 
+('CINZA'), ('CLARO'), ('CLUBE'), ('COISA'), ('COFRE'), 
+('COMER'), ('COMUM'), ('CONTA'), ('CORAL'), ('CORPO'), 
+('CORTE'), ('COURO'), ('CRAVO'), ('CRISE'), ('CULPA'), 
+('CURTO'), ('DANCA'), ('DENTE'), ('DIETA'), ('DISCO'), 
+('DOBRA'), ('DOSES'), ('DRAMA'), ('DUBLE'), ('DUPLA'), 
+('DUZIA'), ('ELITE'), ('ENTRA'), ('ENVIO'), ('ERROS'), 
+('ESTAR'), ('ETAPA'), ('EXAME'), ('EXITO'), ('EXTRA'), 
+('FACIL'), ('FAIXA'), ('FALSO'), ('FAZER'), ('FEBRE'), 
+('FEITO'), ('FELIZ'), ('FERRO'), ('FESTA'), ('FIBRA'), 
+('FICHA'), ('FILME'), ('FINAL'), ('FIRMA'), ('FLORA');
+</code></pre>
+<h3 id="db_configphp">db_config.php</h3>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">// Configurações do Banco de Dados</span>
+<span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">&#x27;DB_SERVER&#x27;</span>, <span class="hljs-string">&#x27;localhost&#x27;</span>);
+<span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">&#x27;DB_USERNAME&#x27;</span>, <span class="hljs-string">&#x27;root&#x27;</span>);
+<span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">&#x27;DB_PASSWORD&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>); 
+<span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">&#x27;DB_NAME&#x27;</span>, <span class="hljs-string">&#x27;termooo_db&#x27;</span>);
+
+<span class="hljs-variable">$conn</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">mysqli</span>(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$conn</span>-&gt;connect_error) {
+    <span class="hljs-keyword">die</span>(<span class="hljs-string">&quot;Falha na conexão: &quot;</span> . <span class="hljs-variable">$conn</span>-&gt;connect_error);
+}
+
+<span class="hljs-title function_ invoke__">mb_internal_encoding</span>(<span class="hljs-string">&quot;UTF-8&quot;</span>);
+<span class="hljs-variable">$conn</span>-&gt;<span class="hljs-title function_ invoke__">set_charset</span>(<span class="hljs-string">&quot;utf8mb4&quot;</span>);
+
+<span class="hljs-title function_ invoke__">session_start</span>();
+
+<span class="hljs-comment">// --- FUNÇÕES DO JOGO ---</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">selecionarPalavraSecreta</span>(<span class="hljs-params"><span class="hljs-variable">$conn</span></span>) </span>{
+    <span class="hljs-variable">$sql</span> = <span class="hljs-string">&quot;SELECT palavra FROM palavras ORDER BY RAND() LIMIT 1&quot;</span>;
+    <span class="hljs-variable">$result</span> = <span class="hljs-variable">$conn</span>-&gt;<span class="hljs-title function_ invoke__">query</span>(<span class="hljs-variable">$sql</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$result</span> &amp;&amp; <span class="hljs-variable">$result</span>-&gt;num_rows &gt; <span class="hljs-number">0</span>) {
+        <span class="hljs-variable">$row</span> = <span class="hljs-variable">$result</span>-&gt;<span class="hljs-title function_ invoke__">fetch_assoc</span>();
+        <span class="hljs-keyword">return</span> <span class="hljs-title function_ invoke__">strtoupper</span>(<span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;palavra&#x27;</span>]);
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;FEIOS&#x27;</span>; 
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">iniciarNovoJogo</span>(<span class="hljs-params"><span class="hljs-variable">$conn</span></span>) </span>{
+    <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;palavra_secreta&#x27;</span>] = <span class="hljs-title function_ invoke__">selecionarPalavraSecreta</span>(<span class="hljs-variable">$conn</span>);
+    <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;tentativas&#x27;</span>] = [];
+    <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;tentativas_restantes&#x27;</span>] = <span class="hljs-number">6</span>;
+    <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;jogo_terminado&#x27;</span>] = <span class="hljs-literal">false</span>;
+    <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;vitoria&#x27;</span>] = <span class="hljs-literal">false</span>;
+    <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;tela_atual&#x27;</span>] = <span class="hljs-string">&#x27;jogo&#x27;</span>; <span class="hljs-comment">// Define que estamos na tela do jogo</span>
+}
+
+<span class="hljs-comment">// --- FUNÇÕES DE USUÁRIO E AUTENTICAÇÃO ---</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cadastrarUsuario</span>(<span class="hljs-params"><span class="hljs-variable">$conn</span>, <span class="hljs-variable">$username</span>, <span class="hljs-variable">$senha</span></span>) </span>{
+    <span class="hljs-comment">// Verifica se usuário já existe</span>
+    <span class="hljs-variable">$stmt</span> = <span class="hljs-variable">$conn</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>(<span class="hljs-string">&quot;SELECT id FROM usuarios WHERE username = ?&quot;</span>);
+    <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">bind_param</span>(<span class="hljs-string">&quot;s&quot;</span>, <span class="hljs-variable">$username</span>);
+    <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">fetch</span>()) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Nome de usuário já existe.&quot;</span>;
+    }
+    <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">close</span>();
+
+    <span class="hljs-comment">// Cria o hash da senha (segurança)</span>
+    <span class="hljs-variable">$senha_hash</span> = <span class="hljs-title function_ invoke__">password_hash</span>(<span class="hljs-variable">$senha</span>, PASSWORD_DEFAULT);
+
+    <span class="hljs-variable">$stmt</span> = <span class="hljs-variable">$conn</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>(<span class="hljs-string">&quot;INSERT INTO usuarios (username, senha) VALUES (?, ?)&quot;</span>);
+    <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">bind_param</span>(<span class="hljs-string">&quot;ss&quot;</span>, <span class="hljs-variable">$username</span>, <span class="hljs-variable">$senha_hash</span>);
+    
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>()) {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Erro ao cadastrar.&quot;</span>;
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logarUsuario</span>(<span class="hljs-params"><span class="hljs-variable">$conn</span>, <span class="hljs-variable">$username</span>, <span class="hljs-variable">$senha</span></span>) </span>{
+    <span class="hljs-variable">$stmt</span> = <span class="hljs-variable">$conn</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>(<span class="hljs-string">&quot;SELECT id, username, senha, sequencia_vitorias FROM usuarios WHERE username = ?&quot;</span>);
+    <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">bind_param</span>(<span class="hljs-string">&quot;s&quot;</span>, <span class="hljs-variable">$username</span>);
+    <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();
+    <span class="hljs-variable">$result</span> = <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">get_result</span>();
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$row</span> = <span class="hljs-variable">$result</span>-&gt;<span class="hljs-title function_ invoke__">fetch_assoc</span>()) {
+        <span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">password_verify</span>(<span class="hljs-variable">$senha</span>, <span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;senha&#x27;</span>])) {
+            <span class="hljs-comment">// Login Sucesso</span>
+            <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user_id&#x27;</span>] = <span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;id&#x27;</span>];
+            <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;username&#x27;</span>] = <span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;username&#x27;</span>];
+            <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;sequencia_vitorias&#x27;</span>] = <span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;sequencia_vitorias&#x27;</span>];
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Usuário ou senha incorretos.&quot;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">atualizarSequencia</span>(<span class="hljs-params"><span class="hljs-variable">$conn</span>, <span class="hljs-variable">$user_id</span>, <span class="hljs-variable">$ganhou</span></span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$ganhou</span>) {
+        <span class="hljs-comment">// Incrementa a sequência</span>
+        <span class="hljs-variable">$sql</span> = <span class="hljs-string">&quot;UPDATE usuarios SET sequencia_vitorias = sequencia_vitorias + 1 WHERE id = ?&quot;</span>;
+        <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;sequencia_vitorias&#x27;</span>]++; <span class="hljs-comment">// Atualiza na sessão também</span>
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// Zera a sequência</span>
+        <span class="hljs-variable">$sql</span> = <span class="hljs-string">&quot;UPDATE usuarios SET sequencia_vitorias = 0 WHERE id = ?&quot;</span>;
+        <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;sequencia_vitorias&#x27;</span>] = <span class="hljs-number">0</span>;
+    }
+    
+    <span class="hljs-variable">$stmt</span> = <span class="hljs-variable">$conn</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>(<span class="hljs-variable">$sql</span>);
+    <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">bind_param</span>(<span class="hljs-string">&quot;i&quot;</span>, <span class="hljs-variable">$user_id</span>);
+    <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();
+    <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">close</span>();
+}
+
+<span class="hljs-comment">// Inicialização básica de navegação</span>
+<span class="hljs-keyword">if</span> (!<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;tela_atual&#x27;</span>])) {
+    <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;tela_atual&#x27;</span>] = <span class="hljs-string">&#x27;menu&#x27;</span>;
+}
+<span class="hljs-meta">?&gt;</span>
+</code></pre>
+<h3 id="indexphp">index.php</h3>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">require_once</span> <span class="hljs-string">&#x27;db_config.php&#x27;</span>;
+
+<span class="hljs-variable">$mensagem_erro</span> = <span class="hljs-string">&#x27;&#x27;</span>;
+<span class="hljs-variable">$mensagem_sucesso</span> = <span class="hljs-string">&#x27;&#x27;</span>;
+
+<span class="hljs-comment">// --- ROTEAMENTO DE AÇÕES (POST) ---</span>
+
+<span class="hljs-comment">// 1. Ação de Logout</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;logout&#x27;</span>])) {
+    <span class="hljs-title function_ invoke__">session_destroy</span>();
+    <span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&quot;Location: index.php&quot;</span>);
+    <span class="hljs-keyword">exit</span>();
+}
+
+<span class="hljs-comment">// 2. Ação de Navegação via Botões</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;ir_para&#x27;</span>])) {
+    <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;tela_atual&#x27;</span>] = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;ir_para&#x27;</span>];
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;ir_para&#x27;</span>] == <span class="hljs-string">&#x27;jogo&#x27;</span> &amp;&amp; !<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;palavra_secreta&#x27;</span>])) {
+        <span class="hljs-title function_ invoke__">iniciarNovoJogo</span>(<span class="hljs-variable">$conn</span>);
+    }
+}
+
+<span class="hljs-comment">// 3. Ação de Cadastro</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;acao_cadastrar&#x27;</span>])) {
+    <span class="hljs-variable">$user</span> = <span class="hljs-title function_ invoke__">trim</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;username&#x27;</span>]);
+    <span class="hljs-variable">$pass</span> = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;password&#x27;</span>];
+    <span class="hljs-variable">$pass_conf</span> = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;password_confirm&#x27;</span>];
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$pass</span> !== <span class="hljs-variable">$pass_conf</span>) {
+        <span class="hljs-variable">$mensagem_erro</span> = <span class="hljs-string">&quot;As senhas não conferem!&quot;</span>;
+    } <span class="hljs-keyword">elseif</span> (<span class="hljs-title function_ invoke__">strlen</span>(<span class="hljs-variable">$user</span>) &lt; <span class="hljs-number">3</span> || <span class="hljs-title function_ invoke__">strlen</span>(<span class="hljs-variable">$pass</span>) &lt; <span class="hljs-number">4</span>) {
+        <span class="hljs-variable">$mensagem_erro</span> = <span class="hljs-string">&quot;Usuário ou senha muito curtos.&quot;</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-variable">$res</span> = <span class="hljs-title function_ invoke__">cadastrarUsuario</span>(<span class="hljs-variable">$conn</span>, <span class="hljs-variable">$user</span>, <span class="hljs-variable">$pass</span>);
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$res</span> === <span class="hljs-literal">true</span>) {
+            <span class="hljs-variable">$mensagem_sucesso</span> = <span class="hljs-string">&quot;Conta criada! Faça login.&quot;</span>;
+            <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;tela_atual&#x27;</span>] = <span class="hljs-string">&#x27;login&#x27;</span>;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-variable">$mensagem_erro</span> = <span class="hljs-variable">$res</span>;
+        }
+    }
+}
+
+<span class="hljs-comment">// 4. Ação de Login</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;acao_login&#x27;</span>])) {
+    <span class="hljs-variable">$user</span> = <span class="hljs-title function_ invoke__">trim</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;username&#x27;</span>]);
+    <span class="hljs-variable">$pass</span> = <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;password&#x27;</span>];
+    
+    <span class="hljs-variable">$res</span> = <span class="hljs-title function_ invoke__">logarUsuario</span>(<span class="hljs-variable">$conn</span>, <span class="hljs-variable">$user</span>, <span class="hljs-variable">$pass</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$res</span> === <span class="hljs-literal">true</span>) {
+        <span class="hljs-title function_ invoke__">iniciarNovoJogo</span>(<span class="hljs-variable">$conn</span>); <span class="hljs-comment">// Começa um jogo ao logar</span>
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-variable">$mensagem_erro</span> = <span class="hljs-variable">$res</span>;
+    }
+}
+
+<span class="hljs-comment">// 5. Lógica do Jogo (Processamento do Palpite)</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;palpite&#x27;</span>]) &amp;&amp; <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;tela_atual&#x27;</span>] == <span class="hljs-string">&#x27;jogo&#x27;</span> &amp;&amp; !<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;jogo_terminado&#x27;</span>]) {
+    <span class="hljs-comment">// ... (A lógica é idêntica à anterior, apenas adicionamos a atualização do BD no final)</span>
+    <span class="hljs-variable">$palpite</span> = <span class="hljs-title function_ invoke__">strtoupper</span>(<span class="hljs-title function_ invoke__">trim</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;palpite&#x27;</span>]));
+    
+    <span class="hljs-comment">// (Validações básicas mantidas)</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">strlen</span>(<span class="hljs-variable">$palpite</span>) !== <span class="hljs-number">5</span> || !<span class="hljs-title function_ invoke__">ctype_alpha</span>(<span class="hljs-variable">$palpite</span>)) {
+        <span class="hljs-variable">$mensagem_erro</span> = <span class="hljs-string">&quot;Palpite inválido (apenas 5 letras).&quot;</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// Lógica de cores (resumida aqui para brevidade, mas mantenha a sua lógica completa de cores)</span>
+        <span class="hljs-variable">$resultado_palpite</span> = [];
+        <span class="hljs-variable">$palavra_secreta_arr</span> = <span class="hljs-title function_ invoke__">str_split</span>(<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;palavra_secreta&#x27;</span>]);
+        <span class="hljs-variable">$palpite_arr</span> = <span class="hljs-title function_ invoke__">str_split</span>(<span class="hljs-variable">$palpite</span>);
+        <span class="hljs-variable">$palavra_temp</span> = <span class="hljs-variable">$palavra_secreta_arr</span>;
+
+        <span class="hljs-comment">// Inicializa</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span>=<span class="hljs-number">0</span>; <span class="hljs-variable">$i</span>&lt;<span class="hljs-number">5</span>; <span class="hljs-variable">$i</span>++) <span class="hljs-variable">$resultado_palpite</span>[<span class="hljs-variable">$i</span>] = [<span class="hljs-string">&#x27;letra&#x27;</span>=&gt;<span class="hljs-variable">$palpite_arr</span>[<span class="hljs-variable">$i</span>], <span class="hljs-string">&#x27;status&#x27;</span>=&gt;<span class="hljs-string">&#x27;incorreta&#x27;</span>];
+
+        <span class="hljs-comment">// Verde</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span>=<span class="hljs-number">0</span>; <span class="hljs-variable">$i</span>&lt;<span class="hljs-number">5</span>; <span class="hljs-variable">$i</span>++) {
+            <span class="hljs-keyword">if</span> (<span class="hljs-variable">$palpite_arr</span>[<span class="hljs-variable">$i</span>] === <span class="hljs-variable">$palavra_secreta_arr</span>[<span class="hljs-variable">$i</span>]) {
+                <span class="hljs-variable">$resultado_palpite</span>[<span class="hljs-variable">$i</span>][<span class="hljs-string">&#x27;status&#x27;</span>] = <span class="hljs-string">&#x27;correta&#x27;</span>;
+                <span class="hljs-variable">$palavra_temp</span>[<span class="hljs-variable">$i</span>] = <span class="hljs-literal">null</span>;
+            }
+        }
+        <span class="hljs-comment">// Amarelo</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span>=<span class="hljs-number">0</span>; <span class="hljs-variable">$i</span>&lt;<span class="hljs-number">5</span>; <span class="hljs-variable">$i</span>++) {
+            <span class="hljs-keyword">if</span> (<span class="hljs-variable">$resultado_palpite</span>[<span class="hljs-variable">$i</span>][<span class="hljs-string">&#x27;status&#x27;</span>] !== <span class="hljs-string">&#x27;correta&#x27;</span>) {
+                <span class="hljs-variable">$pos</span> = <span class="hljs-title function_ invoke__">array_search</span>(<span class="hljs-variable">$palpite_arr</span>[<span class="hljs-variable">$i</span>], <span class="hljs-variable">$palavra_temp</span>);
+                <span class="hljs-keyword">if</span> (<span class="hljs-variable">$pos</span> !== <span class="hljs-literal">false</span>) {
+                    <span class="hljs-variable">$resultado_palpite</span>[<span class="hljs-variable">$i</span>][<span class="hljs-string">&#x27;status&#x27;</span>] = <span class="hljs-string">&#x27;posicao_errada&#x27;</span>;
+                    <span class="hljs-variable">$palavra_temp</span>[<span class="hljs-variable">$pos</span>] = <span class="hljs-literal">null</span>;
+                }
+            }
+        }
+
+        <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;tentativas&#x27;</span>][] = <span class="hljs-variable">$resultado_palpite</span>;
+        <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;tentativas_restantes&#x27;</span>]--;
+
+        <span class="hljs-comment">// Checagem de Vitória/Derrota</span>
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$palpite</span> === <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;palavra_secreta&#x27;</span>]) {
+            <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;jogo_terminado&#x27;</span>] = <span class="hljs-literal">true</span>;
+            <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;vitoria&#x27;</span>] = <span class="hljs-literal">true</span>;
+            <span class="hljs-variable">$mensagem_sucesso</span> = <span class="hljs-string">&quot;Parabéns! Você acertou!&quot;</span>;
+            
+            <span class="hljs-comment">// ATUALIZAR SEQUENCIA NO BANCO SE LOGADO</span>
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user_id&#x27;</span>])) {
+                <span class="hljs-title function_ invoke__">atualizarSequencia</span>(<span class="hljs-variable">$conn</span>, <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user_id&#x27;</span>], <span class="hljs-literal">true</span>);
+            }
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;tentativas_restantes&#x27;</span>] === <span class="hljs-number">0</span>) {
+            <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;jogo_terminado&#x27;</span>] = <span class="hljs-literal">true</span>;
+            <span class="hljs-variable">$mensagem_erro</span> = <span class="hljs-string">&quot;Fim de jogo! A palavra era: &quot;</span> . <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;palavra_secreta&#x27;</span>];
+            
+            <span class="hljs-comment">// ZERAR SEQUENCIA NO BANCO SE LOGADO</span>
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user_id&#x27;</span>])) {
+                <span class="hljs-title function_ invoke__">atualizarSequencia</span>(<span class="hljs-variable">$conn</span>, <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user_id&#x27;</span>], <span class="hljs-literal">false</span>);
+            }
+        }
+    }
+}
+
+<span class="hljs-comment">// Novo Jogo (Botão dentro do jogo)</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;novo_jogo&#x27;</span>])) {
+    <span class="hljs-title function_ invoke__">iniciarNovoJogo</span>(<span class="hljs-variable">$conn</span>);
+    <span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&quot;Location: index.php&quot;</span>);
+    <span class="hljs-keyword">exit</span>();
+}
+
+<span class="hljs-meta">?&gt;</span>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=<span class="hljs-string">&quot;pt-BR&quot;</span>&gt;
+&lt;head&gt;
+    &lt;meta charset=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;
+    &lt;meta name=<span class="hljs-string">&quot;viewport&quot;</span> content=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;
+    &lt;title&gt;Termooo Clone&lt;/title&gt;
+    &lt;link rel=<span class="hljs-string">&quot;stylesheet&quot;</span> href=<span class="hljs-string">&quot;style.css&quot;</span>&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>=&quot;<span class="hljs-title">container</span>&quot;&gt;
+        &lt;?<span class="hljs-title">php</span> <span class="hljs-title">if</span> (<span class="hljs-title">isset</span>($<span class="hljs-title">_SESSION</span>[&#x27;<span class="hljs-title">user_id</span>&#x27;])): ?&gt;
+            &lt;<span class="hljs-title">div</span> <span class="hljs-title">class</span>=&quot;<span class="hljs-title">header</span>-<span class="hljs-title">user</span>&quot;&gt;
+                &lt;<span class="hljs-title">span</span>&gt;<span class="hljs-title">Ol</span>á, &lt;<span class="hljs-title">strong</span>&gt;&lt;?<span class="hljs-title">php</span> <span class="hljs-title">echo</span> <span class="hljs-title">htmlspecialchars</span>($<span class="hljs-title">_SESSION</span>[&#x27;<span class="hljs-title">username</span>&#x27;]); ?&gt;&lt;/<span class="hljs-title">strong</span>&gt;&lt;/<span class="hljs-title">span</span>&gt;
+                &lt;<span class="hljs-title">span</span>&gt;🔥 <span class="hljs-title">Sequ</span>ê<span class="hljs-title">ncia</span>: &lt;?<span class="hljs-title">php</span> <span class="hljs-title">echo</span> $<span class="hljs-title">_SESSION</span>[&#x27;<span class="hljs-title">sequencia_vitorias</span>&#x27;]; ?&gt;&lt;/<span class="hljs-title">span</span>&gt;
+                &lt;<span class="hljs-title">a</span> <span class="hljs-title">href</span>=&quot;<span class="hljs-title">index</span>.<span class="hljs-title">php</span>?<span class="hljs-title">logout</span>=1&quot; <span class="hljs-title">class</span>=&quot;<span class="hljs-title">logout</span>-<span class="hljs-title">btn</span>&quot;&gt;<span class="hljs-title">Sair</span>&lt;/<span class="hljs-title">a</span>&gt;
+            &lt;/<span class="hljs-title">div</span>&gt;
+        &lt;?<span class="hljs-title">php</span> <span class="hljs-title">endif</span>; ?&gt;
+
+        &lt;<span class="hljs-title">h1</span>&gt;<span class="hljs-title">Termooo</span> <span class="hljs-title">Clone</span>&lt;/<span class="hljs-title">h1</span>&gt;
+
+        &lt;?<span class="hljs-title">php</span> <span class="hljs-title">if</span> ($<span class="hljs-title">mensagem_erro</span>): ?&gt;
+            &lt;<span class="hljs-title">p</span> <span class="hljs-title">class</span>=&quot;<span class="hljs-title">mensagem</span> <span class="hljs-title">derrota</span>&quot;&gt;&lt;?<span class="hljs-title">php</span> <span class="hljs-title">echo</span> <span class="hljs-title">htmlspecialchars</span>($<span class="hljs-title">mensagem_erro</span>); ?&gt;&lt;/<span class="hljs-title">p</span>&gt;
+        &lt;?<span class="hljs-title">php</span> <span class="hljs-title">endif</span>; ?&gt;
+        &lt;?<span class="hljs-title">php</span> <span class="hljs-title">if</span> ($<span class="hljs-title">mensagem_sucesso</span>): ?&gt;
+            &lt;<span class="hljs-title">p</span> <span class="hljs-title">class</span>=&quot;<span class="hljs-title">mensagem</span> <span class="hljs-title">vitoria</span>&quot;&gt;&lt;?<span class="hljs-title">php</span> <span class="hljs-title">echo</span> <span class="hljs-title">htmlspecialchars</span>($<span class="hljs-title">mensagem_sucesso</span>); ?&gt;&lt;/<span class="hljs-title">p</span>&gt;
+        &lt;?<span class="hljs-title">php</span> <span class="hljs-title">endif</span>; ?&gt;
+
+
+        &lt;?<span class="hljs-title">php</span> <span class="hljs-title">if</span> ($<span class="hljs-title">_SESSION</span>[&#x27;<span class="hljs-title">tela_atual</span>&#x27;] == &#x27;<span class="hljs-title">menu</span>&#x27; &amp;&amp; !<span class="hljs-title">isset</span>($<span class="hljs-title">_SESSION</span>[&#x27;<span class="hljs-title">user_id</span>&#x27;])): ?&gt;
+            
+            &lt;<span class="hljs-title">div</span> <span class="hljs-title">class</span>=&quot;<span class="hljs-title">menu</span>-<span class="hljs-title">botoes</span>&quot;&gt;
+                &lt;<span class="hljs-title">form</span> <span class="hljs-title">method</span>=&quot;<span class="hljs-title">POST</span>&quot;&gt;
+                    &lt;<span class="hljs-title">input</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">hidden</span>&quot; <span class="hljs-title">name</span>=&quot;<span class="hljs-title">ir_para</span>&quot; <span class="hljs-title">value</span>=&quot;<span class="hljs-title">jogo</span>&quot;&gt;
+                    &lt;<span class="hljs-title">button</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">submit</span>&quot; <span class="hljs-title">class</span>=&quot;<span class="hljs-title">btn</span>-<span class="hljs-title">grande</span>&quot;&gt;<span class="hljs-title">Jogar</span> <span class="hljs-title">Agora</span>&lt;/<span class="hljs-title">button</span>&gt;
+                &lt;/<span class="hljs-title">form</span>&gt;
+
+                &lt;<span class="hljs-title">form</span> <span class="hljs-title">method</span>=&quot;<span class="hljs-title">POST</span>&quot;&gt;
+                    &lt;<span class="hljs-title">input</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">hidden</span>&quot; <span class="hljs-title">name</span>=&quot;<span class="hljs-title">ir_para</span>&quot; <span class="hljs-title">value</span>=&quot;<span class="hljs-title">cadastro</span>&quot;&gt;
+                    &lt;<span class="hljs-title">button</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">submit</span>&quot; <span class="hljs-title">class</span>=&quot;<span class="hljs-title">btn</span>-<span class="hljs-title">grande</span> <span class="hljs-title">btn</span>-<span class="hljs-title">secundario</span>&quot;&gt;<span class="hljs-title">Criar</span> <span class="hljs-title">Conta</span>&lt;/<span class="hljs-title">button</span>&gt;
+                &lt;/<span class="hljs-title">form</span>&gt;
+
+                &lt;<span class="hljs-title">form</span> <span class="hljs-title">method</span>=&quot;<span class="hljs-title">POST</span>&quot;&gt;
+                    &lt;<span class="hljs-title">input</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">hidden</span>&quot; <span class="hljs-title">name</span>=&quot;<span class="hljs-title">ir_para</span>&quot; <span class="hljs-title">value</span>=&quot;<span class="hljs-title">login</span>&quot;&gt;
+                    &lt;<span class="hljs-title">button</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">submit</span>&quot; <span class="hljs-title">class</span>=&quot;<span class="hljs-title">btn</span>-<span class="hljs-title">grande</span> <span class="hljs-title">btn</span>-<span class="hljs-title">secundario</span>&quot;&gt;<span class="hljs-title">Entrar</span>&lt;/<span class="hljs-title">button</span>&gt;
+                &lt;/<span class="hljs-title">form</span>&gt;
+            &lt;/<span class="hljs-title">div</span>&gt;
+
+        &lt;?<span class="hljs-title">php</span> <span class="hljs-title">elseif</span> ($<span class="hljs-title">_SESSION</span>[&#x27;<span class="hljs-title">tela_atual</span>&#x27;] == &#x27;<span class="hljs-title">cadastro</span>&#x27; &amp;&amp; !<span class="hljs-title">isset</span>($<span class="hljs-title">_SESSION</span>[&#x27;<span class="hljs-title">user_id</span>&#x27;])): ?&gt;
+            
+            &lt;<span class="hljs-title">h3</span>&gt;<span class="hljs-title">Criar</span> <span class="hljs-title">Conta</span>&lt;/<span class="hljs-title">h3</span>&gt;
+            &lt;<span class="hljs-title">form</span> <span class="hljs-title">method</span>=&quot;<span class="hljs-title">POST</span>&quot; <span class="hljs-title">class</span>=&quot;<span class="hljs-title">form</span>-<span class="hljs-title">auth</span>&quot;&gt;
+                &lt;<span class="hljs-title">input</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">hidden</span>&quot; <span class="hljs-title">name</span>=&quot;<span class="hljs-title">acao_cadastrar</span>&quot; <span class="hljs-title">value</span>=&quot;1&quot;&gt;
+                
+                &lt;<span class="hljs-title">label</span>&gt;<span class="hljs-title">Usu</span>á<span class="hljs-title">rio</span>&lt;/<span class="hljs-title">label</span>&gt;
+                &lt;<span class="hljs-title">input</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">text</span>&quot; <span class="hljs-title">name</span>=&quot;<span class="hljs-title">username</span>&quot; <span class="hljs-title">required</span>&gt;
+                
+                &lt;<span class="hljs-title">label</span>&gt;<span class="hljs-title">Senha</span>&lt;/<span class="hljs-title">label</span>&gt;
+                &lt;<span class="hljs-title">input</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">password</span>&quot; <span class="hljs-title">name</span>=&quot;<span class="hljs-title">password</span>&quot; <span class="hljs-title">required</span>&gt;
+                
+                &lt;<span class="hljs-title">label</span>&gt;<span class="hljs-title">Confirmar</span> <span class="hljs-title">Senha</span>&lt;/<span class="hljs-title">label</span>&gt;
+                &lt;<span class="hljs-title">input</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">password</span>&quot; <span class="hljs-title">name</span>=&quot;<span class="hljs-title">password_confirm</span>&quot; <span class="hljs-title">required</span>&gt;
+                
+                &lt;<span class="hljs-title">button</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">submit</span>&quot; <span class="hljs-title">class</span>=&quot;<span class="hljs-title">btn</span>-<span class="hljs-title">grande</span>&quot;&gt;<span class="hljs-title">Cadastrar</span>&lt;/<span class="hljs-title">button</span>&gt;
+            &lt;/<span class="hljs-title">form</span>&gt;
+            &lt;<span class="hljs-title">form</span> <span class="hljs-title">method</span>=&quot;<span class="hljs-title">POST</span>&quot;&gt;&lt;<span class="hljs-title">button</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">submit</span>&quot; <span class="hljs-title">name</span>=&quot;<span class="hljs-title">ir_para</span>&quot; <span class="hljs-title">value</span>=&quot;<span class="hljs-title">menu</span>&quot; <span class="hljs-title">class</span>=&quot;<span class="hljs-title">link</span>-<span class="hljs-title">voltar</span>&quot;&gt;<span class="hljs-title">Voltar</span>&lt;/<span class="hljs-title">button</span>&gt;&lt;/<span class="hljs-title">form</span>&gt;
+
+        &lt;?<span class="hljs-title">php</span> <span class="hljs-title">elseif</span> ($<span class="hljs-title">_SESSION</span>[&#x27;<span class="hljs-title">tela_atual</span>&#x27;] == &#x27;<span class="hljs-title">login</span>&#x27; &amp;&amp; !<span class="hljs-title">isset</span>($<span class="hljs-title">_SESSION</span>[&#x27;<span class="hljs-title">user_id</span>&#x27;])): ?&gt;
+            
+            &lt;<span class="hljs-title">h3</span>&gt;<span class="hljs-title">Login</span>&lt;/<span class="hljs-title">h3</span>&gt;
+            &lt;<span class="hljs-title">form</span> <span class="hljs-title">method</span>=&quot;<span class="hljs-title">POST</span>&quot; <span class="hljs-title">class</span>=&quot;<span class="hljs-title">form</span>-<span class="hljs-title">auth</span>&quot;&gt;
+                &lt;<span class="hljs-title">input</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">hidden</span>&quot; <span class="hljs-title">name</span>=&quot;<span class="hljs-title">acao_login</span>&quot; <span class="hljs-title">value</span>=&quot;1&quot;&gt;
+                
+                &lt;<span class="hljs-title">label</span>&gt;<span class="hljs-title">Usu</span>á<span class="hljs-title">rio</span>&lt;/<span class="hljs-title">label</span>&gt;
+                &lt;<span class="hljs-title">input</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">text</span>&quot; <span class="hljs-title">name</span>=&quot;<span class="hljs-title">username</span>&quot; <span class="hljs-title">required</span>&gt;
+                
+                &lt;<span class="hljs-title">label</span>&gt;<span class="hljs-title">Senha</span>&lt;/<span class="hljs-title">label</span>&gt;
+                &lt;<span class="hljs-title">input</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">password</span>&quot; <span class="hljs-title">name</span>=&quot;<span class="hljs-title">password</span>&quot; <span class="hljs-title">required</span>&gt;
+                
+                &lt;<span class="hljs-title">button</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">submit</span>&quot; <span class="hljs-title">class</span>=&quot;<span class="hljs-title">btn</span>-<span class="hljs-title">grande</span>&quot;&gt;<span class="hljs-title">Entrar</span>&lt;/<span class="hljs-title">button</span>&gt;
+            &lt;/<span class="hljs-title">form</span>&gt;
+            &lt;<span class="hljs-title">form</span> <span class="hljs-title">method</span>=&quot;<span class="hljs-title">POST</span>&quot;&gt;&lt;<span class="hljs-title">button</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">submit</span>&quot; <span class="hljs-title">name</span>=&quot;<span class="hljs-title">ir_para</span>&quot; <span class="hljs-title">value</span>=&quot;<span class="hljs-title">menu</span>&quot; <span class="hljs-title">class</span>=&quot;<span class="hljs-title">link</span>-<span class="hljs-title">voltar</span>&quot;&gt;<span class="hljs-title">Voltar</span>&lt;/<span class="hljs-title">button</span>&gt;&lt;/<span class="hljs-title">form</span>&gt;
+
+        &lt;?<span class="hljs-title">php</span> <span class="hljs-title">else</span>: ?&gt;
+            
+            &lt;<span class="hljs-title">div</span> <span class="hljs-title">class</span>=&quot;<span class="hljs-title">tabuleiro</span>&quot;&gt;
+                &lt;?<span class="hljs-title">php</span>
+                // <span class="hljs-title">Exibe</span> <span class="hljs-title">tentativas</span>
+                <span class="hljs-title">foreach</span> ($<span class="hljs-title">_SESSION</span>[&#x27;<span class="hljs-title">tentativas</span>&#x27;] <span class="hljs-title">as</span> $<span class="hljs-title">tentativa</span>) </span>{
+                    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;div class=&quot;linha&quot;&gt;&#x27;</span>;
+                    <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$tentativa</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$l</span>) {
+                        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;div class=&quot;celula &#x27;</span> . <span class="hljs-variable">$l</span>[<span class="hljs-string">&#x27;status&#x27;</span>] . <span class="hljs-string">&#x27;&quot;&gt;&#x27;</span> . <span class="hljs-variable">$l</span>[<span class="hljs-string">&#x27;letra&#x27;</span>] . <span class="hljs-string">&#x27;&lt;/div&gt;&#x27;</span>;
+                    }
+                    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;/div&gt;&#x27;</span>;
+                }
+                <span class="hljs-comment">// Linhas vazias</span>
+                <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;tentativas_restantes&#x27;</span>]; <span class="hljs-variable">$i</span>++) {
+                    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;div class=&quot;linha&quot;&gt;&#x27;</span>;
+                    <span class="hljs-keyword">for</span> (<span class="hljs-variable">$j</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$j</span> &lt; <span class="hljs-number">5</span>; <span class="hljs-variable">$j</span>++) <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;div class=&quot;celula&quot;&gt;&lt;/div&gt;&#x27;</span>;
+                    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;/div&gt;&#x27;</span>;
+                }
+                <span class="hljs-meta">?&gt;</span>
+            &lt;/div&gt;
+
+            <span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">if</span> (!<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;jogo_terminado&#x27;</span>]): <span class="hljs-meta">?&gt;</span>
+                &lt;form method=<span class="hljs-string">&quot;POST&quot;</span> <span class="hljs-class"><span class="hljs-keyword">class</span>=&quot;<span class="hljs-title">form</span>-<span class="hljs-title">palpite</span>&quot;&gt;
+                    &lt;<span class="hljs-title">input</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">text</span>&quot; <span class="hljs-title">name</span>=&quot;<span class="hljs-title">palpite</span>&quot; <span class="hljs-title">maxlength</span>=&quot;5&quot; <span class="hljs-title">required</span> <span class="hljs-title">autofocus</span> <span class="hljs-title">autocomplete</span>=&quot;<span class="hljs-title">off</span>&quot;&gt;
+                    &lt;<span class="hljs-title">button</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">submit</span>&quot;&gt;<span class="hljs-title">Tentar</span>&lt;/<span class="hljs-title">button</span>&gt;
+                &lt;/<span class="hljs-title">form</span>&gt;
+            &lt;?<span class="hljs-title">php</span> <span class="hljs-title">else</span>: ?&gt;
+                &lt;<span class="hljs-title">form</span> <span class="hljs-title">method</span>=&quot;<span class="hljs-title">POST</span>&quot; <span class="hljs-title">class</span>=&quot;<span class="hljs-title">form</span>-<span class="hljs-title">novo</span>-<span class="hljs-title">jogo</span>&quot;&gt;
+                    &lt;<span class="hljs-title">input</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">hidden</span>&quot; <span class="hljs-title">name</span>=&quot;<span class="hljs-title">novo_jogo</span>&quot; <span class="hljs-title">value</span>=&quot;1&quot;&gt;
+                    &lt;<span class="hljs-title">button</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">submit</span>&quot;&gt;<span class="hljs-title">Novo</span> <span class="hljs-title">Jogo</span>&lt;/<span class="hljs-title">button</span>&gt;
+                &lt;/<span class="hljs-title">form</span>&gt;
+            &lt;?<span class="hljs-title">php</span> <span class="hljs-title">endif</span>; ?&gt;
+
+            &lt;?<span class="hljs-title">php</span> <span class="hljs-title">if</span> (!<span class="hljs-title">isset</span>($<span class="hljs-title">_SESSION</span>[&#x27;<span class="hljs-title">user_id</span>&#x27;])): ?&gt;
+                &lt;<span class="hljs-title">form</span> <span class="hljs-title">method</span>=&quot;<span class="hljs-title">POST</span>&quot; <span class="hljs-title">style</span>=&quot;<span class="hljs-title">margin</span>-<span class="hljs-title">top</span>:20<span class="hljs-title">px</span>;&quot;&gt;
+                    &lt;<span class="hljs-title">button</span> <span class="hljs-title">type</span>=&quot;<span class="hljs-title">submit</span>&quot; <span class="hljs-title">name</span>=&quot;<span class="hljs-title">ir_para</span>&quot; <span class="hljs-title">value</span>=&quot;<span class="hljs-title">menu</span>&quot; <span class="hljs-title">class</span>=&quot;<span class="hljs-title">link</span>-<span class="hljs-title">voltar</span>&quot;&gt;<span class="hljs-title">Voltar</span> <span class="hljs-title">ao</span> <span class="hljs-title">Menu</span>&lt;/<span class="hljs-title">button</span>&gt;
+                &lt;/<span class="hljs-title">form</span>&gt;
+            &lt;?<span class="hljs-title">php</span> <span class="hljs-title">endif</span>; ?&gt;
+
+        &lt;?<span class="hljs-title">php</span> <span class="hljs-title">endif</span>; ?&gt;
+    &lt;/<span class="hljs-title">div</span>&gt;
+&lt;/<span class="hljs-title">body</span>&gt;
+&lt;/<span class="hljs-title">html</span>&gt;
+</span></code></pre>
+<h3 id="stylecss">style.css</h3>
+<pre><code class="language-css"><span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">font-family</span>: Arial, sans-serif;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f0f0f0</span>;
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">justify-content</span>: center;
+    <span class="hljs-attribute">align-items</span>: center;
+    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">100vh</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-class">.container</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fff</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">30px</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">4px</span> <span class="hljs-number">8px</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.1</span>);
+    <span class="hljs-attribute">text-align</span>: center;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">max-width</span>: <span class="hljs-number">400px</span>;
+}
+
+<span class="hljs-selector-tag">h1</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#333</span>;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+}
+
+<span class="hljs-selector-class">.mensagem</span> {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+    <span class="hljs-attribute">font-weight</span>: bold;
+}
+
+<span class="hljs-selector-class">.alerta</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fff3cd</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#856404</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ffeeba</span>;
+}
+
+<span class="hljs-selector-class">.vitoria</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#d4edda</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#155724</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#c3e6cb</span>;
+}
+
+<span class="hljs-selector-class">.derrota</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f8d7da</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#721c24</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#f5c6cb</span>;
+}
+
+<span class="hljs-selector-class">.tabuleiro</span> {
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">flex-direction</span>: column;
+    <span class="hljs-attribute">gap</span>: <span class="hljs-number">5px</span>;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+}
+
+<span class="hljs-selector-class">.linha</span> {
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">justify-content</span>: center;
+    <span class="hljs-attribute">gap</span>: <span class="hljs-number">5px</span>;
+}
+
+<span class="hljs-selector-class">.celula</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">justify-content</span>: center;
+    <span class="hljs-attribute">align-items</span>: center;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.5em</span>;
+    <span class="hljs-attribute">font-weight</span>: bold;
+    <span class="hljs-attribute">text-transform</span>: uppercase;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid <span class="hljs-number">#d3d6da</span>;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fff</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
+    <span class="hljs-attribute">transition</span>: all <span class="hljs-number">0.3s</span> ease;
+}
+
+<span class="hljs-comment">/* Estilos para o feedback do palpite */</span>
+<span class="hljs-selector-class">.celula</span><span class="hljs-selector-class">.correta</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#6aaa64</span>; <span class="hljs-comment">/* Verde */</span>
+    <span class="hljs-attribute">color</span>: white;
+    <span class="hljs-attribute">border-color</span>: <span class="hljs-number">#6aaa64</span>;
+}
+
+<span class="hljs-selector-class">.celula</span><span class="hljs-selector-class">.posicao_errada</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#c9b458</span>; <span class="hljs-comment">/* Amarelo */</span>
+    <span class="hljs-attribute">color</span>: white;
+    <span class="hljs-attribute">border-color</span>: <span class="hljs-number">#c9b458</span>;
+}
+
+<span class="hljs-selector-class">.celula</span><span class="hljs-selector-class">.incorreta</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#787c7e</span>; <span class="hljs-comment">/* Cinza */</span>
+    <span class="hljs-attribute">color</span>: white;
+    <span class="hljs-attribute">border-color</span>: <span class="hljs-number">#787c7e</span>;
+}
+
+<span class="hljs-selector-class">.form-palpite</span> {
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">gap</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">15px</span>;
+}
+
+<span class="hljs-selector-class">.form-palpite</span> <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=<span class="hljs-string">&quot;text&quot;</span>]</span> {
+    <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">1</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1em</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+    <span class="hljs-attribute">text-transform</span>: uppercase;
+    <span class="hljs-attribute">text-align</span>: center;
+}
+
+<span class="hljs-selector-class">.form-palpite</span> <span class="hljs-selector-tag">button</span>, <span class="hljs-selector-class">.form-novo-jogo</span> <span class="hljs-selector-tag">button</span> {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">15px</span>;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1em</span>;
+    <span class="hljs-attribute">font-weight</span>: bold;
+    <span class="hljs-attribute">color</span>: white;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#6aaa64</span>;
+    <span class="hljs-attribute">border</span>: none;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+    <span class="hljs-attribute">cursor</span>: pointer;
+    <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">0.2s</span>;
+}
+
+<span class="hljs-selector-class">.form-palpite</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.form-novo-jogo</span> <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:hover</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#5d9858</span>;
+}
+
+<span class="hljs-selector-class">.info</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#666</span>;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0.9em</span>;
+}
+
+<span class="hljs-selector-class">.form-novo-jogo</span> {
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">20px</span>;
+}
+
+<span class="hljs-comment">/* ... Mantenha todo o CSS anterior ... */</span>
+
+<span class="hljs-comment">/* Estilos para o Menu e Formulários de Login */</span>
+<span class="hljs-selector-class">.menu-botoes</span> {
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">flex-direction</span>: column;
+    <span class="hljs-attribute">gap</span>: <span class="hljs-number">15px</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+}
+
+<span class="hljs-selector-class">.btn-grande</span> {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">15px</span>;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.1em</span>;
+    <span class="hljs-attribute">cursor</span>: pointer;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#6aaa64</span>;
+    <span class="hljs-attribute">color</span>: white;
+    <span class="hljs-attribute">border</span>: none;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+    <span class="hljs-attribute">font-weight</span>: bold;
+    <span class="hljs-attribute">transition</span>: background <span class="hljs-number">0.3s</span>;
+    <span class="hljs-attribute">text-decoration</span>: none; <span class="hljs-comment">/* Caso usemos tags &lt;a&gt; */</span>
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">box-sizing</span>: border-box;
+}
+
+<span class="hljs-selector-class">.btn-grande</span><span class="hljs-selector-pseudo">:hover</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#5d9858</span>;
+}
+
+<span class="hljs-selector-class">.btn-secundario</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#787c7e</span>;
+}
+
+<span class="hljs-selector-class">.btn-secundario</span><span class="hljs-selector-pseudo">:hover</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#606365</span>;
+}
+
+<span class="hljs-selector-class">.form-auth</span> {
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">flex-direction</span>: column;
+    <span class="hljs-attribute">gap</span>: <span class="hljs-number">15px</span>;
+    <span class="hljs-attribute">text-align</span>: left;
+}
+
+<span class="hljs-selector-class">.form-auth</span> <span class="hljs-selector-tag">label</span> {
+    <span class="hljs-attribute">font-weight</span>: bold;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0.9em</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#333</span>;
+}
+
+<span class="hljs-selector-class">.form-auth</span> <span class="hljs-selector-tag">input</span> {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1em</span>;
+}
+
+<span class="hljs-selector-class">.link-voltar</span> {
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">15px</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#666</span>;
+    <span class="hljs-attribute">text-decoration</span>: underline;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0.9em</span>;
+    <span class="hljs-attribute">cursor</span>: pointer;
+    <span class="hljs-attribute">background</span>: none;
+    <span class="hljs-attribute">border</span>: none;
+}
+
+<span class="hljs-selector-class">.header-user</span> {
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">justify-content</span>: space-between;
+    <span class="hljs-attribute">align-items</span>: center;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">15px</span>;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0.9em</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#555</span>;
+    <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#eee</span>;
+    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">10px</span>;
+}
+
+<span class="hljs-selector-class">.logout-btn</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#d9534f</span>;
+    <span class="hljs-attribute">text-decoration</span>: none;
+    <span class="hljs-attribute">font-weight</span>: bold;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0.8em</span>;
+}
+</code></pre>
+<h2 id="principais-lições-e-dificuldades">Principais lições e dificuldades</h2>
+<p>Gostei muito de aprender sobre as $_SESSION, memso ele tendo me confundido muito. Aprender como um sistema de navegação de página única foi muito interessante. A criação e manipulação de sessões me deu uma introdução básica ao protocolo HTTP.</p>
+<p>Outro grande exercício dessa atividade foi manipular arrays, o que sempre me confunde com o tempo. Acessar posições específicas em arrays, trocar os valores em posições específicos seguindo uma lógica de negócio específica, mover elementos de um array para o outro.</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>
